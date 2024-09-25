@@ -11,16 +11,12 @@ header {
     margin-bottom: 20px;
 }
 
-h1 {
-    color: #2c3e50; /* Azul oscuro */
-}
-
-h2 {
+h1, h2 {
     color: #2c3e50; /* Azul oscuro */
 }
 
 section {
-    background: white; /* Fondo blanco para secciones */
+    background: white;
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
@@ -32,5 +28,75 @@ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 0.8em;
-    color: #2c3e50; /* Azul oscuro para el footer */
+    color: #2c3e50;
 }
+
+/* Contenedor principal que usará flexbox para crear las dos columnas */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilos para las dos columnas */
+.left-column, .right-column {
+    width: 48%; /* El ancho de las columnas será el mismo */
+}
+
+/* Estilos para pantallas grandes (ordenador de escritorio) */
+@media (min-width: 1024px) {
+    body {
+        padding: 40px; /* Más espacio alrededor en pantallas grandes */
+    }
+
+    header {
+        font-size: 1.2em;
+    }
+
+    section {
+        max-width: 80%; /* Secciones más anchas */
+        margin: 20px auto; /* Centradas horizontalmente */
+    }
+
+    /* Usar flexbox para las dos columnas */
+    .main-container {
+        display: flex;
+    }
+
+    .left-column, .right-column {
+        width: 48%;
+    }
+}
+
+/* Estilos para pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Menos espacio alrededor */
+        font-size: 0.9em; /* Texto un poco más pequeño */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño para el título */
+    }
+
+    section {
+        padding: 10px;
+        margin: 5px 0;
+        box-shadow: none; /* Quitar sombra para un diseño más simple */
+        border-left: none; /* Quitar el borde izquierdo */
+    }
+
+    footer {
+        font-size: 0.7em;
+    }
+
+    /* Columnas en una sola columna para pantallas pequeñas */
+    .main-container {
+        display: block;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+    }
+}
+
